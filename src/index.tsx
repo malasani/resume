@@ -4,6 +4,8 @@ import * as ReactDOM from 'react-dom';
 import * as hello from './components/hello';
 import { Card, User } from './components/card';
 import { Pie } from './components/Pie';
+import { Skills } from './components/Skills';
+
 
 let UserCard = {
     Name: "Bapaiah Malasani",
@@ -64,6 +66,22 @@ let PieData = {
 }
 
 
+let skills = {
+    skills: [
+        {
+            name: "C#",
+            value: 80
+        },
+        {
+            name: ".Net MVC",
+            value: 70
+        }, {
+            name: "JavaScript",
+            value: 60
+        }
+    ]
+}
+
 ReactDOM.render(
-    <Pie {...PieData} />
+    <Skills  {...skills} />
     , document.getElementById('app'));

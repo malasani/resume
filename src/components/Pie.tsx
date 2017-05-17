@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as Slice from './Slice';
 
-interface PieProps {
+export interface PieProps {
 	data: Array<number>;
 	radius: number;
 	hole: number;
