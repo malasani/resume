@@ -145,7 +145,7 @@ html, body {
 }
 .wrapper > .card {
   margin: auto;
-  width: 360px;
+  width: 480px;
   border-radius: 5px 5px 0px 0px;
   background: #f06292;
   box-shadow: 6px 6px 8px #999;
@@ -393,3 +393,4 @@ html, body {
 .wrapper > .card > .totals > div > a:hover:before{
     background: #f06292;
 }
+

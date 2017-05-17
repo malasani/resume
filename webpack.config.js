@@ -15,7 +15,7 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'awesome-typescript-loader'
+                use: ['babel-loader','awesome-typescript-loader']
             },
             {
                 enforce: 'pre',
@@ -23,10 +23,6 @@ module.exports = {
                 use: 'source-map-loader'
             }
         ]
-    },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
     }
 
 }
