@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 import * as hello from './components/hello';
 import { Card, User } from './components/card';
+import { Pie } from './components/Pie';
 
 let UserCard = {
     Name: "Bapaiah Malasani",
@@ -51,6 +52,18 @@ var menuArray = [{
     faclass: "fa fa-facebook"
 }];
 
+let PieData = {
+    data: [5, 90],
+    radius: 80,
+    hole: 65,
+    colors: ["#E5E5E5", "#7B43A1"],
+    strokeWidth: 1,
+    labels: false,
+    percent: false,
+    stroke: "#fff"
+}
+
+
 ReactDOM.render(
-    <Card {...UserCard} />
+    <Pie {...PieData} />
     , document.getElementById('app'));

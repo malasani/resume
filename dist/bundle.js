@@ -9523,69 +9523,74 @@ module.exports = getIteratorFn;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Card = undefined;
+exports.Pie = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(32);
 
 var React = _interopRequireWildcard(_react);
 
-var _link = __webpack_require__(83);
+var _Slice = __webpack_require__(83);
 
-var link = _interopRequireWildcard(_link);
+var Slice = _interopRequireWildcard(_Slice);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var Card = exports.Card = function Card(props) {
-    var LinkNode = props.socialLinks.map(function (item) {
-        return React.createElement(link.Link, _extends({}, item, { key: item.title + props.socialLinks.indexOf(item) }));
-    });
-    return React.createElement(
-        'div',
-        { className: 'card' },
-        React.createElement(
-            'div',
-            { className: 'header' },
-            React.createElement(
-                'a',
-                { className: 'userlink', href: props.GitLoginUrl },
-                props.GitLogin,
-                React.createElement('i', { className: 'fa fa-link' })
-            ),
-            React.createElement(
-                'div',
-                { className: 'avatar' },
-                React.createElement('img', { src: props.ImageUrl })
-            ),
-            React.createElement(
-                'div',
-                { className: 'userinfo' },
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Pie = exports.Pie = function (_React$Component) {
+    _inherits(Pie, _React$Component);
+
+    function Pie() {
+        _classCallCheck(this, Pie);
+
+        return _possibleConstructorReturn(this, (Pie.__proto__ || Object.getPrototypeOf(Pie)).apply(this, arguments));
+    }
+
+    _createClass(Pie, [{
+        key: 'render',
+        value: function render() {
+            var colors = this.props.colors,
+                colorsLength = colors.length,
+                labels = this.props.labels,
+                hole = this.props.hole,
+                radius = this.props.radius,
+                diameter = radius * 2,
+                self = this,
+                sum = void 0,
+                startAngle = void 0,
+                d = null;
+            sum = this.props.data.reduce(function (carry, current) {
+                return carry + current;
+            }, 0);
+            startAngle = 0;
+            return React.createElement(
+                'svg',
+                { width: diameter, height: diameter, viewBox: '0 0 ' + diameter + ' ' + diameter, xmlns: 'http://www.w3.org/2000/svg', version: '1.1' },
+                this.props.data.map(function (slice, sliceIndex) {
+                    var angle, nextAngle, percent;
+                    nextAngle = startAngle;
+                    angle = slice / sum * 360;
+                    percent = slice / sum * 100;
+                    startAngle += angle;
+                    return React.createElement(Slice.Slice, { key: sliceIndex, value: slice, percent: self.props.percent, percentValue: Number.parseFloat(percent.toFixed(1)), startAngle: nextAngle, angle: angle, radius: radius, hole: radius - hole, trueHole: hole, showLabel: self.props.labels, fill: colors[sliceIndex % colorsLength], stroke: self.props.stroke, strokeWidth: self.props.strokeWidth });
+                }),
                 React.createElement(
-                    'h2',
-                    null,
-                    props.Name
-                ),
-                React.createElement(
-                    'p',
-                    null,
-                    props.Info
+                    'text',
+                    { x: '150', y: '150', 'text-anchor': 'middle' },
+                    '116 Reviews'
                 )
-            )
-        ),
-        React.createElement(
-            'div',
-            { className: 'totals' },
-            React.createElement(
-                'div',
-                null,
-                LinkNode
-            )
-        ),
-        React.createElement('br', null),
-        React.createElement('br', null)
-    );
-};
+            );
+        }
+    }]);
+
+    return Pie;
+}(React.Component);
 
 /***/ }),
 /* 82 */
@@ -9607,7 +9612,9 @@ module.exports = __webpack_require__(114);
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Link = undefined;
+exports.Slice = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(32);
 
@@ -9615,13 +9622,107 @@ var React = _interopRequireWildcard(_react);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var Link = exports.Link = function Link(props) {
-    return React.createElement(
-        "a",
-        { href: props.URL, title: props.title, target: "_blank" },
-        React.createElement("i", { className: props.faclass })
-    );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Slice = exports.Slice = function (_React$Component) {
+    _inherits(Slice, _React$Component);
+
+    function Slice(props) {
+        _classCallCheck(this, Slice);
+
+        var _this = _possibleConstructorReturn(this, (Slice.__proto__ || Object.getPrototypeOf(Slice)).call(this, props));
+
+        _this.state = {
+            path: '',
+            x: 0,
+            y: 0
+        };
+        return _this;
+    }
+
+    _createClass(Slice, [{
+        key: 'getAnglePoint',
+        value: function getAnglePoint(startAngle, endAngle, radius, x, y) {
+            var x1, y1, x2, y2;
+            x1 = x + radius * Math.cos(Math.PI * startAngle / 180);
+            y1 = y + radius * Math.sin(Math.PI * startAngle / 180);
+            x2 = x + radius * Math.cos(Math.PI * endAngle / 180);
+            y2 = y + radius * Math.sin(Math.PI * endAngle / 180);
+            return { x1: x1, y1: y1, x2: x2, y2: y2 };
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps() {
+            this.setState({ path: '' });
+            this.animate();
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.animate();
+        }
+    }, {
+        key: 'animate',
+        value: function animate() {
+            this.draw(0);
+        }
+    }, {
+        key: 'draw',
+        value: function draw(s) {
+            var p = this.props,
+                path = [],
+                a,
+                b,
+                c,
+                self = this,
+                step;
+            step = p.angle / (37.5 / 2);
+            if (s + step > p.angle) {
+                s = p.angle;
+            }
+            // Get angle points
+            a = this.getAnglePoint(p.startAngle, p.startAngle + s, p.radius, p.radius, p.radius);
+            b = this.getAnglePoint(p.startAngle, p.startAngle + s, p.radius - p.hole, p.radius, p.radius);
+            path.push('M' + a.x1 + ',' + a.y1);
+            path.push('A' + p.radius + ',' + p.radius + ' 0 ' + (s > 180 ? 1 : 0) + ',1 ' + a.x2 + ',' + a.y2);
+            path.push('L' + b.x2 + ',' + b.y2);
+            path.push('A' + (p.radius - p.hole) + ',' + (p.radius - p.hole) + ' 0 ' + (s > 180 ? 1 : 0) + ',0 ' + b.x1 + ',' + b.y1);
+            path.push('Z');
+            this.setState({ path: path.join(' ') });
+            if (s < p.angle) {
+                setTimeout(function () {
+                    self.draw(s + step);
+                }, 16);
+            } else if (p.showLabel) {
+                c = this.getAnglePoint(p.startAngle, p.startAngle + p.angle / 2, p.radius / 2 + p.trueHole / 2, p.radius, p.radius);
+                this.setState({
+                    x: c.x2,
+                    y: c.y2
+                });
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'g',
+                { overflow: 'hidden' },
+                React.createElement('path', { d: this.state.path, fill: this.props.fill, stroke: this.props.stroke, strokeWidth: this.props.strokeWidth ? this.props.strokeWidth : 3 }),
+                this.props.showLabel && this.props.percentValue > 5 ? React.createElement(
+                    'text',
+                    { x: this.state.x, y: this.state.y, fill: '#fff', textAnchor: 'middle' },
+                    this.props.percent ? this.props.percentValue + '%' : this.props.value
+                ) : null
+            );
+        }
+    }]);
+
+    return Slice;
+}(React.Component);
 
 /***/ }),
 /* 84 */
@@ -9638,7 +9739,7 @@ var _reactDom = __webpack_require__(82);
 
 var ReactDOM = _interopRequireWildcard(_reactDom);
 
-var _card = __webpack_require__(81);
+var _Pie = __webpack_require__(81);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -9683,7 +9784,17 @@ var menuArray = [{
     title: "FaceBook",
     faclass: "fa fa-facebook"
 }];
-ReactDOM.render(React.createElement(_card.Card, UserCard), document.getElementById('app'));
+var PieData = {
+    data: [5, 90],
+    radius: 80,
+    hole: 65,
+    colors: ["#E5E5E5", "#7B43A1"],
+    strokeWidth: 1,
+    labels: false,
+    percent: false,
+    stroke: "#fff"
+};
+ReactDOM.render(React.createElement(_Pie.Pie, PieData), document.getElementById('app'));
 
 /***/ }),
 /* 85 */
@@ -10820,6 +10931,20 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       return emptyFunction.thatReturnsNull;
     }
 
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
     function validate(props, propName, componentName, location, propFullName) {
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
@@ -10952,6 +11077,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // This handles more types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
     var propType = getPropType(propValue);
     if (propType === 'object') {
       if (propValue instanceof Date) {
@@ -10961,6 +11089,23 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
     }
     return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
   }
 
   // Returns class name of the object, if any.
