@@ -69,17 +69,75 @@ let PieData = {
 let skills = {
     skills: [
         {
-            name: "C#",
-            value: 80
+            type: "Languages",
+            skills:[
+            {
+                name: "C#",
+                value: 80
+            },
+            {
+                name: "JavaScript",
+                value: 70
+            },
+            {
+                name: "TSQL",
+                value: 80
+            }]
         },
         {
-            name: ".Net MVC",
-            value: 70
-        }, {
-            name: "JavaScript",
-            value: 60
+            type: "Framework",
+            skills:[
+            {
+                name: ".NET",
+                value: 80
+            },
+            {
+                name: "React",
+                value: 70
+            },
+            {
+                name: "AngularJS",
+                value: 50
+            }]
         }
-    ]
+      ,
+        {
+            type: "BI",
+            skills:[
+            {
+                name: "SSIS",
+                value: 70
+            },
+            {
+                name: "SSRS",
+                value: 70
+            },
+            {
+                name: "PowerBI",
+                value: 50
+            }]
+        },
+        {
+            
+            type: "Tools",
+            skills:[
+            {
+                name: "VS 2015",
+                value: 70
+            },
+            {
+                name: "SSMS",
+                value: 70
+            },
+            {
+                name: "VSTS",
+                value: 50
+            }]
+
+        }
+      
+    ],
+    Others:["sdf","sdf","sdfsf","dfhfhhf"]
 }
 
 ReactDOM.render(

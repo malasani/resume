@@ -9534,29 +9534,70 @@ var _Pie = __webpack_require__(83);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var Skills = exports.Skills = function Skills(props) {
+    var getRandomInt = function getRandomInt(min, max) {
+        var xyz = Math.floor(Math.random() * (max - min)) + min;
+        console.log(xyz, min, max);
+        return xyz;
+    };
+    var colorsList = ['#43A19E', '#7B43A1', '#F2317A', '#FF9824', '#58CF6C'];
     var Pieprops = {
         data: [5, 90],
         radius: 30,
         hole: 27,
-        colors: ["#E5E5E5", "#7B43A1"],
-        strokeWidth: 0.1,
+        colors: ["#E5E5E5", colorsList[getRandomInt(0, 5)]],
+        strokeWidth: 1,
         labels: false,
         percent: false,
         stroke: "#fff"
     };
-    var skillnode = props.skills.map(function (skill) {
-        Pieprops.data = [100 - skill.value, skill.value];
+    var otherNode = props.Others.map(function (other) {
         return React.createElement(
             'div',
-            null,
-            React.createElement(_Pie.Pie, Pieprops),
-            ' '
+            { className: 'zsx' },
+            React.createElement(
+                'label',
+                null,
+                other
+            )
+        );
+    });
+    var skillnode = props.skills.map(function (skill) {
+        var node = skill.skills.map(function (s) {
+            Pieprops.data = [100 - s.value, s.value];
+            Pieprops.colors = ["#E5E5E5", colorsList[getRandomInt(1, 5)]];
+            return React.createElement(
+                'div',
+                { className: 'xyz' },
+                React.createElement(_Pie.Pie, Pieprops),
+                ' '
+            );
+        });
+        console.log(node);
+        return React.createElement(
+            'div',
+            { className: 'totals' },
+            React.createElement(
+                'h2',
+                null,
+                skill.type
+            ),
+            node
         );
     });
     return React.createElement(
         'div',
         { className: 'card' },
-        skillnode
+        skillnode,
+        React.createElement(
+            'div',
+            { className: 'totals' },
+            React.createElement(
+                'h2',
+                null,
+                'Others'
+            ),
+            otherNode
+        )
     );
 };
 
@@ -9843,15 +9884,55 @@ var PieData = {
 };
 var skills = {
     skills: [{
-        name: "C#",
-        value: 80
+        type: "Languages",
+        skills: [{
+            name: "C#",
+            value: 80
+        }, {
+            name: "JavaScript",
+            value: 70
+        }, {
+            name: "TSQL",
+            value: 80
+        }]
     }, {
-        name: ".Net MVC",
-        value: 70
+        type: "Framework",
+        skills: [{
+            name: ".NET",
+            value: 80
+        }, {
+            name: "React",
+            value: 70
+        }, {
+            name: "AngularJS",
+            value: 50
+        }]
     }, {
-        name: "JavaScript",
-        value: 60
-    }]
+        type: "BI",
+        skills: [{
+            name: "SSIS",
+            value: 70
+        }, {
+            name: "SSRS",
+            value: 70
+        }, {
+            name: "PowerBI",
+            value: 50
+        }]
+    }, {
+        type: "Tools",
+        skills: [{
+            name: "VS 2015",
+            value: 70
+        }, {
+            name: "SSMS",
+            value: 70
+        }, {
+            name: "VSTS",
+            value: 50
+        }]
+    }],
+    Others: ["sdf", "sdf", "sdfsf", "dfhfhhf"]
 };
 ReactDOM.render(React.createElement(_Skills.Skills, skills), document.getElementById('app'));
 
