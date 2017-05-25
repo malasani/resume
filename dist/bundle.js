@@ -9552,13 +9552,10 @@ var Skills = exports.Skills = function Skills(props) {
     };
     var otherNode = props.Others.map(function (other) {
         return React.createElement(
-            'div',
-            { className: 'zsx' },
-            React.createElement(
-                'label',
-                null,
-                other
-            )
+            'span',
+            null,
+            other,
+            ';'
         );
     });
     var skillnode = props.skills.map(function (skill) {
@@ -9567,9 +9564,13 @@ var Skills = exports.Skills = function Skills(props) {
             Pieprops.colors = ["#E5E5E5", colorsList[getRandomInt(1, 5)]];
             return React.createElement(
                 'div',
-                { className: 'xyz' },
+                { className: 'width25' },
                 React.createElement(_Pie.Pie, Pieprops),
-                ' '
+                React.createElement(
+                    'span',
+                    { className: 'lang' },
+                    s.name
+                )
             );
         });
         console.log(node);
@@ -9577,9 +9578,13 @@ var Skills = exports.Skills = function Skills(props) {
             'div',
             { className: 'totals' },
             React.createElement(
-                'h2',
-                null,
-                skill.type
+                'div',
+                { className: 'width25' },
+                React.createElement(
+                    'span',
+                    null,
+                    skill.type
+                )
             ),
             node
         );
@@ -9587,16 +9592,29 @@ var Skills = exports.Skills = function Skills(props) {
     return React.createElement(
         'div',
         { className: 'card' },
+        React.createElement(
+            'div',
+            null,
+            'Skills'
+        ),
         skillnode,
         React.createElement(
             'div',
             { className: 'totals' },
             React.createElement(
-                'h2',
-                null,
-                'Others'
+                'div',
+                { className: 'width25' },
+                React.createElement(
+                    'span',
+                    null,
+                    'Others'
+                )
             ),
-            otherNode
+            React.createElement(
+                'div',
+                { className: 'width75' },
+                otherNode
+            )
         )
     );
 };
@@ -9932,7 +9950,7 @@ var skills = {
             value: 50
         }]
     }],
-    Others: ["sdf", "sdf", "sdfsf", "dfhfhhf"]
+    Others: ["WPF", "WCF", "PowerShell", "Azure", "GIT", "HTML", "CSS", "Java", "Python", "MAchine Learning", "ServiceNow"]
 };
 ReactDOM.render(React.createElement(_Skills.Skills, skills), document.getElementById('app'));
 

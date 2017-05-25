@@ -118,7 +118,7 @@ let skills = {
             }]
         },
         {
-            
+
             type: "Tools",
             skills:[
             {
@@ -135,9 +135,9 @@ let skills = {
             }]
 
         }
-      
+
     ],
-    Others:["sdf","sdf","sdfsf","dfhfhhf"]
+    Others:["WPF","WCF","PowerShell","Azure","GIT","HTML","CSS","Java","Python","MAchine Learning","ServiceNow"]
 }
 
 ReactDOM.render(

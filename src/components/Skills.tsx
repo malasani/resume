@@ -31,9 +31,8 @@ export const Skills = (props: { skills: SkillGroup[], Others: string[] }) => {
     };
 
     const otherNode = props.Others.map((other) => {
-        return (<div className="zsx">
-            <label>{other}</label>
-        </div>
+        return (
+            <span>{other};</span>
         );
     });
     const skillnode = props.skills.map((skill) => {
@@ -41,22 +40,27 @@ export const Skills = (props: { skills: SkillGroup[], Others: string[] }) => {
         const node = skill.skills.map((s) => {
             Pieprops.data = [100 - s.value, s.value];
             Pieprops.colors = ["#E5E5E5", colorsList[getRandomInt(1, 5)]];
-            return (<div className="xyz">
-                <Pie {...Pieprops} /> </div>);
+            return (<div className="width25">
+                <Pie {...Pieprops} />
+                <span className="lang">{s.name}</span>
+                </div>);
         });
         console.log(node);
         return (<div className="totals">
-            <h2>{skill.type}</h2>
+            <div className="width25"><span>{skill.type}</span></div>
             {node}
         </div>
         );
     });
 
     return (<div className="card">
+       <div>Skills</div>
         {skillnode}
         <div className="totals">
-            <h2>Others</h2>
-            {otherNode}
+            <div className="width25"><span>Others</span></div>
+            <div className="width75">
+            {otherNode}</div>
+
         </div>
     </div>
     )
