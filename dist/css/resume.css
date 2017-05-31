@@ -69,12 +69,12 @@ html, body {
           align-items: stretch;
 }
 
-.wrapper > .loading {
+.wrapper  .loading {
   margin: auto;
   width: 200px;
   text-align: center;
 }
-.wrapper > .loading span {
+.wrapper  .loading span {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -83,31 +83,31 @@ html, body {
   margin: 0px 10px;
   opacity: 0.1;
 }
-.wrapper > .loading span:nth-child(1) {
+.wrapper  .loading span:nth-child(1) {
   -webkit-animation: blink 1.3s infinite;
           animation: blink 1.3s infinite;
   -webkit-animation-delay: .300s;
           animation-delay: .300s;
 }
-.wrapper > .loading span:nth-child(2) {
+.wrapper  .loading span:nth-child(2) {
   -webkit-animation: blink 1.3s infinite;
           animation: blink 1.3s infinite;
   -webkit-animation-delay: .400s;
           animation-delay: .400s;
 }
-.wrapper > .loading span:nth-child(3) {
+.wrapper  .loading span:nth-child(3) {
   -webkit-animation: blink 1.3s infinite;
           animation: blink 1.3s infinite;
   -webkit-animation-delay: .500s;
           animation-delay: .500s;
 }
-.wrapper > .loading span:nth-child(4) {
+.wrapper  .loading span:nth-child(4) {
   -webkit-animation: blink 1.3s infinite;
           animation: blink 1.3s infinite;
   -webkit-animation-delay: .600s;
           animation-delay: .600s;
 }
-.wrapper > .loading span:nth-child(5) {
+.wrapper  .loading span:nth-child(5) {
   -webkit-animation: blink 1.3s infinite;
           animation: blink 1.3s infinite;
   -webkit-animation-delay: .700s;
@@ -143,14 +143,14 @@ html, body {
     background: #fff;
   }
 }
-.wrapper > .card {
+.wrapper  .card {
   margin: auto;
   width: 480px;
   border-radius: 5px 5px 0px 0px;
   background: #f06292;
   box-shadow: 6px 6px 8px #999;
 }
-.wrapper > .card .header {
+.wrapper  .card .header {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,21 +165,21 @@ html, body {
   border-radius: 5px 5px 0px 0px;
   height: 200px;
 }
-.wrapper > .card .header .avatar, .wrapper > .card .header .avatar > img {
+.wrapper  .card .header .avatar, .wrapper  .card .header .avatar  img {
   width: 100px;
   height: 100px;
 }
-.wrapper > .card .header .avatar {
+.wrapper  .card .header .avatar {
   overflow: hidden;
   border-radius: 100%;
   border: 3px solid #eee;
   margin: auto;
 }
 
-.wrapper > .card > .header {
+.wrapper  .card  .header {
   background: #fff;
 }
-.wrapper > .card > .header span.repos-count {
+.wrapper  .card  .header span.repos-count {
   position: absolute;
   left: 130px;
   top: 90px;
@@ -195,7 +195,7 @@ html, body {
   text-align: center;
   border-radius: 50%;
 }
-.wrapper > .card > .header span.repos-count:after {
+.wrapper  .card  .header span.repos-count:after {
   content: "repos";
   position: absolute;
   color: #7E9BA0;
@@ -204,7 +204,7 @@ html, body {
   bottom: -20px;
   left: 0px;
 }
-.wrapper > .card > .header a.userlink {
+.wrapper  .card  .header a.userlink {
   background: #7E9BA0;
   color: #fff;
   padding: 4px 10px;
@@ -213,25 +213,25 @@ html, body {
   top: 0px;
   text-decoration: none;
 }
-.wrapper > .card > .header a.userlink:hover {
+.wrapper  .card  .header a.userlink:hover {
   background: #f06292;
 }
-.wrapper > .card > .header a.userlink i {
+.wrapper  .card  .header a.userlink i {
   font-size: 12px;
   margin: 0px 0px 0px 5px;
 }
-.wrapper > .card > .header .userinfo {
+.wrapper  .card  .header .userinfo {
   text-align: center;
   padding: 0px 0px 20px 0px;
 }
-.wrapper > .card > .header .userinfo h2 {
+.wrapper  .card  .header .userinfo h2 {
   color: #7E9BA0;
 }
-.wrapper > .card > .header .userinfo p {
+.wrapper  .card  .header .userinfo p {
   color: #7E9BA0;
 }
 
-.wrapper > .card > .top-repos {
+.wrapper  .card  .top-repos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,7 +246,7 @@ html, body {
   background: #f06292;
   text-align: center;
 }
-.wrapper > .card > .top-repos .repository {
+.wrapper  .card  .top-repos .repository {
   margin: 5px 0px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -256,24 +256,24 @@ html, body {
   color: #fff;
   text-decoration: none;
 }
-.wrapper > .card > .top-repos .repository i {
+.wrapper  .card  .top-repos .repository i {
   display: block;
   margin-bottom: 5px;
   font-size: 8px;
 }
-.wrapper > .card > .top-repos .repository .title {
+.wrapper  .card  .top-repos .repository .title {
   text-transform: uppercase;
   font-size: 12px;
 }
 
-.wrapper > .card > .pie-chart-wrap {
+.wrapper  .card  .pie-chart-wrap {
   position: relative;
   text-align: center;
 }
-.wrapper > .card > .pie-chart-wrap .pie-chart {
+.wrapper  .card  .pie-chart-wrap .pie-chart {
   margin-top: 40px;
 }
-.wrapper > .card > .pie-chart-wrap .pie-chart-totals {
+.wrapper  .card  .pie-chart-wrap .pie-chart-totals {
   position: absolute;
   top: 100px;
   width: 100%;
@@ -281,12 +281,12 @@ html, body {
   font-weight: bold;
   font-size: 22px;
 }
-.wrapper > .card > .pie-chart-wrap .pie-chart-totals i {
+.wrapper  .card  .pie-chart-wrap .pie-chart-totals i {
   display: block;
   margin-bottom: 10px;
 }
 
-.wrapper > .card > .chart {
+.wrapper  .card  .chart {
   position: relative;
   border: none;
   background: #fff;
@@ -294,18 +294,25 @@ html, body {
   overflow: hidden;
   height: 100px;
 }
-.wrapper > .card > .chart canvas {
+.wrapper  .card  .chart canvas {
   border: none;
   position: absolute;
   left: -5px;
   bottom: -9px;
 }
 
-.wrapper > .card > .activity-line {
+.wrapper  .card  .activity-line {
   padding-top: 40px;
 }
 
-.wrapper > .card > .totals {
+
+.wrapper  .card  .totals > ul{
+margin-left: 30px;
+color: #7E9BA0;
+font-size: 16px;
+}
+
+.wrapper  .card  .totals {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,34 +326,35 @@ html, body {
   padding: 10px 0px 5px 0px;
   background: #fff;
 }
-.wrapper > .card > .totals > div {
+.wrapper  .card  .totals  div {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   text-align: center;
   padding-left: 5px;
-  font-size: 16px;
+  /*font-size: 16px;*/
   color: #7E9BA0;
 }
-/*.wrapper > .card > .totals > div:nth-child(2) {
+/*.wrapper  .card  .totals  div:nth-child(2) {
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
 }*/
-.wrapper > .card > .totals > div .desc {
+.wrapper  .card  .totals  div .desc {
   text-transform: uppercase;
   font-size: 9px;
 }
 
 
-.wrapper > .card > .totals > div > a{
-    width: 25px;
+.wrapper  .card  .totals  div  a{
+    /*width: 25px;*/
     height: 25px;
+    text-decoration: none;
     line-height: 25px !important;
     position: relative;
     margin: 0 5px;
     text-align: center;
     display: inline-block;
-    color: #ffffff;
+    color: #7E9BA0;
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
     -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
     -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
@@ -354,13 +362,13 @@ html, body {
     transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
-.wrapper > .card > .totals > div>a i{
+.wrapper  .card  .totals  diva i{
     position: relative;
     top: 2px;
     left: 1px;
 }
 
-.wrapper > .card > .totals > div>  a:before{
+/*.wrapper  .card  .totals  div  a:before{
     content: "";
     display: inline-block;
     width: 100%;
@@ -385,13 +393,13 @@ html, body {
     -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
     transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 
-}
+}*/
 
-.wrapper > .card > .totals > div > a:hover{
+.wrapper  .card  .totals  div  a:hover{
     color:#ffffff;
 }
 
-.wrapper > .card > .totals > div > a:hover:before{
+.wrapper  .card  .totals  div  a:hover:before{
     background: #f06292;
 }
 
@@ -448,4 +456,108 @@ svg text {
 {
   width: 74%;
   overflow-wrap: break-word;
+}
+
+.full
+{
+  width: 80%;
+}
+.half{
+  width: 50%;
+}
+.small{
+  width: 25%;
+}
+.Heading{
+  margin-left: 50px;
+  font-size: x-large;
+  text-decoration: underline;
+}
+.vertical{
+text-transform: capitalize;
+transform: rotate(90deg);
+transform-origin: left 30px;
+}
+.Exp{
+
+width: 100%;
+background: #fff;
+display: inline-block;
+border-bottom: cadetblue;
+border-bottom-width: 3px;
+border-bottom-style: inset;
+}
+
+.desc {
+    margin-left: 50px;
+    text-indent: 2;
+    text-indent: initial;
+    word-wrap: break-word;
+    text-align: justify;
+    margin-right: 10px;
+}
+
+ul.res {
+    margin-left: 70px;
+}
+.Exp>h6{
+  margin: 20px 50px;
+}
+nav ul {
+  /*margin: 20px 20px 0 20px;*/
+  margin: auto;
+  max-width: 200px;
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+font-size: 20px;
+}
+nav li a {
+  display: block;
+  width: 50px;
+  text-align: center;
+  color: #aaa;
+  cursor: pointer;
+}
+nav li a:hover {
+  color: #f06292;
+}
+.active{
+  color: #f06292;
+}
+.wid100{
+  width: 100%;
+}
+ .tooltiptext {
+    top: 24px;
+    margin-left: -40px;
+    visibility: hidden;
+    width: 80px;
+    background-color: #7E9BA0;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+ font-size: 12px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 20;
+}
+
+i:hover .tooltiptext {
+    visibility: visible;
+}
+.f20{
+  font-size: 20px;
+}
+.f16{
+  font-size: 16px;
+}
+.f14{
+  font-size: 14px;
 }

@@ -1,5 +1,12 @@
 import * as React from 'react';
-import * as link from './link';
+
+
+export interface iLink {
+    URL: string;
+    title: string;
+    faclass: string;
+    value: string;
+}
 
 export interface User {
     Name: string;
@@ -7,26 +14,27 @@ export interface User {
     GitLogin: string;
     Info: string;
     GitLoginUrl: string;
-    socialLinks: link.iLink[]
+    socialLinks: Array<iLink>
 }
-export const Card = (props: User) => {
 
+export class UserCard extends React.Component<User, undefined> {
+    public render(): JSX.Element {
 
-    const LinkNode = props.socialLinks.map((item) => {
-        return (<link.Link {...item} key={item.title+props.socialLinks.indexOf(item)} />)
+    const LinkNode = this.props.socialLinks.map((item) => {
+        return (<a href={item.URL} title={item.title}><i className={item.faclass}></i>{item.value}</a>)
     });
 
     return (
         <div className="card">
             <div className="header">
 
-                <a className="userlink" href={props.GitLoginUrl}>{props.GitLogin}<i className="fa fa-link"></i></a>
+                <a className="userlink" href={this.props.GitLoginUrl}>{this.props.GitLogin}<i className="fa fa-link"></i></a>
                 <div className="avatar">
-                    <img src={props.ImageUrl} />
+                    <img src={this.props.ImageUrl} />
                 </div>
                 <div className="userinfo">
-                    <h2>{props.Name}</h2>
-                    <p>{props.Info}</p>
+                    <h2>{this.props.Name}</h2>
+                    <p>{this.props.Info}</p>
                 </div>
             </div>
             <div className="totals">
@@ -35,9 +43,8 @@ export const Card = (props: User) => {
                 </div>
             </div>
             <br /><br />
-        </div>
+        </div>);
 
-    );
+    }
+}
 
-
-};

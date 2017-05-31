@@ -54,7 +54,7 @@ export const Skills = (props: { skills: SkillGroup[], Others: string[] }) => {
     });
 
     return (<div className="card">
-       <div>Skills</div>
+       <div>##Skills</div>
         {skillnode}
         <div className="totals">
             <div className="width25"><span>Others</span></div>
